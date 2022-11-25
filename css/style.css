@@ -1,0 +1,26 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* header style */
+h1 {
+    color: #31A5AC;
+    font-family: 'Montserrat', sans-serif;
+}
+
+i {
+    color: #A38A00;
+}
+
+.calculation-part {
+    background-color: #F8F8F8;
+}
+
+#colFormLabel{
+    background-color: #DCDCDC;
+    border-radius: 0px;
+}
