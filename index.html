@@ -34,24 +34,37 @@
                     <div class="calculation-part p-5 text-center">
                         <!-- income part start-->
                         <h6 class="pb-2">Income</h6>
-                        <div class="">
-                            <label for="colFormLabel" class="col-sm-2 col-form-label">Income: </label> <input
+                        <div>
+                            <label for="colFormLabel" class="col-sm-2 col-form-label me-2">Income: </label> <input
                                 type="text" class="form-control w-50 d-inline-flex" id="colFormLabel" placeholder="">
                         </div>
 
                         <!-- expenses part start -->
                         <h6 class="pt-4 pb-2">Expenses</h6>
                         <!-- expenses input field -->
-                        <label for="colFormLabel" class="col-sm-2 col-form-label">Food: </label> <input type="text"
+                        <label for="colFormLabel" class="col-sm-2 col-form-label me-2">Food: </label> <input type="text"
                             class="form-control w-50 d-inline-flex my-2" id="colFormLabel" placeholder=""><br>
-                        <label for="colFormLabel" class="col-sm-2 col-form-label ">Rent: </label> <input type="text"
+                        <label for="colFormLabel" class="col-sm-2 col-form-label me-2 ">Rent: </label> <input type="text"
                             class="form-control w-50 d-inline-flex my-2" id="colFormLabel" placeholder=""><br>
-                        <label for="colFormLabel" class="col-sm-2 col-form-label">Clothes: </label> <input type="text"
+                        <label for="colFormLabel" class="col-sm-2 col-form-label me-2">Clothes: </label> <input type="text"
                             class="form-control w-50 d-inline-flex my-2" id="colFormLabel" placeholder=""> <br>
                         <button type="button" class="btn btn-info text-white mt-2 px-5 rounded-0">Calculate</button>
 
                         <h6 class="pt-4 pb-2">Total Expenses: 5500</h6>
                         <h6 class="pb-2">Balance: 4000</h6>
+                        <!-- Saving part start-->
+                        <div class="row row-cols-1 row-cols-lg-2">
+                            <div class="col">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label me-2 me-3">Save: </label> <input
+                                    type="text" class="form-control w-50 d-inline-flex" id="colFormLabel"
+                                    placeholder=""> <span class="ms-4">%</span>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-info text-white px-5 rounded-0">Save</button>
+                            </div>
+                        </div>
+                        <h6 class="pt-4 pb-2">Saving Amount: 2000</h6>
+                        <h6 class="pb-2">Remaining Balance: 2500</h6>
                     </div>
                 </div>
             </div>
