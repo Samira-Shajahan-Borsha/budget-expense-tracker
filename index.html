@@ -16,10 +16,12 @@
 </head>
 
 <body>
+    <!-- header start -->
     <header class="text-center mt-4">
         <h1 class="h3 d-inline-flex">Money Manager</h1>
         <i class="fa-solid fa-sack-dollar fs-5"></i>
     </header>
+    <!-- main start -->
     <main>
         <section class="container mt-4">
             <!-- image  -->
@@ -36,27 +38,27 @@
                         <h6 class="pb-2">Income</h6>
                         <div>
                             <label for="colFormLabel" class="col-sm-2 col-form-label me-2">Income: </label> <input
-                                type="text" class="form-control w-50 d-inline-flex" id="colFormLabel" placeholder="">
+                                type="text" class="form-control w-50 d-inline-flex" id="income-input" placeholder="">
                         </div>
 
                         <!-- expenses part start -->
                         <h6 class="pt-4 pb-2">Expenses</h6>
                         <!-- expenses input field -->
                         <label for="colFormLabel" class="col-sm-2 col-form-label me-2">Food: </label> <input type="text"
-                            class="form-control w-50 d-inline-flex my-2" id="colFormLabel" placeholder=""><br>
+                            class="form-control w-50 d-inline-flex my-2" id="food-input" placeholder=""><br>
                         <label for="colFormLabel" class="col-sm-2 col-form-label me-2 ">Rent: </label> <input type="text"
-                            class="form-control w-50 d-inline-flex my-2" id="colFormLabel" placeholder=""><br>
+                            class="form-control w-50 d-inline-flex my-2" id="rent-input" placeholder=""><br>
                         <label for="colFormLabel" class="col-sm-2 col-form-label me-2">Clothes: </label> <input type="text"
-                            class="form-control w-50 d-inline-flex my-2" id="colFormLabel" placeholder=""> <br>
-                        <button type="button" class="btn btn-info text-white mt-2 px-5 rounded-0">Calculate</button>
+                            class="form-control w-50 d-inline-flex my-2" id="clothes-input" placeholder=""> <br>
+                        <button id="calculate-btn" type="button" class="btn btn-info text-white mt-2 px-5 rounded-0">Calculate</button>
 
-                        <h6 class="pt-4 pb-2">Total Expenses: 5500</h6>
-                        <h6 class="pb-2">Balance: 4000</h6>
+                        <h6 class="pt-4 pb-2">Total Expenses: <span id="total-expenses">5500</span></h6>
+                        <h6 class="pb-2">Balance: <span id="total-balance">4000</span></h6>
                         <!-- Saving part start-->
                         <div class="row row-cols-1 row-cols-lg-2">
                             <div class="col">
                                 <label for="colFormLabel" class="col-sm-2 col-form-label me-2 me-3">Save: </label> <input
-                                    type="text" class="form-control w-50 d-inline-flex" id="colFormLabel"
+                                    type="text" class="form-control w-50 d-inline-flex" id="save-input"
                                     placeholder=""> <span class="ms-4">%</span>
                             </div>
                             <div class="col">
@@ -74,6 +76,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+        
+    <script src="js/script.js"></script>
 </body>
 
 </html>
