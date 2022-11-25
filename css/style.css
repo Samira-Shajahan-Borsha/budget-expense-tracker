@@ -16,11 +16,14 @@ i {
     color: #A38A00;
 }
 
+/* main style */
 .calculation-part {
     background-color: #F8F8F8;
 }
 
-#colFormLabel{
+/* input field style */
+.form-control{
     background-color: #DCDCDC;
     border-radius: 0px;
+    padding-left: 15px;
 }
