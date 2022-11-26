@@ -31,6 +31,7 @@ function calculate() {
     const clothesExpense = getInputValue('clothes-input');
 
     if (isNaN(totalIncome) || isNaN(foodExpense) || isNaN(rentExpense) || isNaN(clothesExpense)) {
+        incomeInput.value = '';
         return alert("You are required to enter a valid number");
     }
 
@@ -53,15 +54,19 @@ calculateBtn.addEventListener('click', function () {
 });
 
 
-
+//calculate saving & remaining amount
 saveBtn.addEventListener('click', function () {
+
     const totalIncome = getInputValue('income-input');
     const percentageOfSavingAmount = getInputValue('save-input');
     const savingAmountField = getElement('saving-amount');
     const remainingBalance = getElement('remaining-balance');
     const totalBalanceField = getElement('total-balance');
-    
-    if (percentageOfSavingAmount > 0) {
+
+    if (isNaN(totalIncome)) {
+        return;
+    }
+    else if (percentageOfSavingAmount > 0) {
         const savingAmount = totalIncome * 0.2;
         savingAmountField.innerText = savingAmount;
 
