@@ -13,13 +13,18 @@ function getInputValue(inputId) {
 
 }
 
+//get element
+function getElement(element) {
+    return document.getElementById(element);
+}
+
 //calculate total expenses and balance
 function calculate() {
-    const incomeInput = document.getElementById('income-input');
-    const totalExpenseField = document.getElementById('total-expenses');
-    const totalBalanceField = document.getElementById('total-balance');
+    const incomeInput = getElement('income-input');
+    const totalExpenseField = getElement('total-expenses');
+    const totalBalanceField = getElement('total-balance');
 
-    const totalIncome = parseInt(incomeInput.value); 
+    const totalIncome = parseInt(incomeInput.value);
 
     const foodExpense = getInputValue('food-input');
     const rentExpense = getInputValue('rent-input');
@@ -52,10 +57,10 @@ calculateBtn.addEventListener('click', function () {
 saveBtn.addEventListener('click', function () {
     const totalIncome = getInputValue('income-input');
     const percentageOfSavingAmount = getInputValue('save-input');
-    const savingAmountField = document.getElementById('saving-amount');
-    const remainingBalance = document.getElementById('remaining-balance');
-    const totalBalanceField = document.getElementById('total-balance');
-
+    const savingAmountField = getElement('saving-amount');
+    const remainingBalance = getElement('remaining-balance');
+    const totalBalanceField = getElement('total-balance');
+    
     if (percentageOfSavingAmount > 0) {
         const savingAmount = totalIncome * 0.2;
         savingAmountField.innerText = savingAmount;
