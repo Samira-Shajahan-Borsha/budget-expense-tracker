@@ -30,12 +30,16 @@ function calculate() {
     const rentExpense = getInputValue('rent-input');
     const clothesExpense = getInputValue('clothes-input');
 
-    if (isNaN(totalIncome) || isNaN(foodExpense) || isNaN(rentExpense) || isNaN(clothesExpense)) {
+    if (isNaN(totalIncome) || totalIncome == '' || totalIncome < 0) {
         incomeInput.value = '';
+        return alert("You are required to enter a positive amount");
+    }
+    else if (isNaN(foodExpense) || isNaN(rentExpense) || isNaN(clothesExpense)) {
+        totalBalanceField.innerText = totalIncome;
         return alert("You are required to enter a valid number");
     }
 
-    else if (totalIncome < 0 || foodExpense < 0 || rentExpense < 0 || clothesExpense < 0) {
+    else if (foodExpense < 0 || rentExpense < 0 || clothesExpense < 0) {
         return alert("You are required to enter a positive number");
     }
 
@@ -43,8 +47,15 @@ function calculate() {
         const totalExpenseAmount = foodExpense + rentExpense + clothesExpense;
         totalExpenseField.innerText = totalExpenseAmount;
 
-        const balance = totalIncome - totalExpenseAmount;
-        totalBalanceField.innerText = balance;
+        if (totalExpenseAmount > totalIncome) {
+            totalExpenseField.innerText = 0;
+            return alert("You can not expense more than your income");
+        }
+        else {
+            const balance = totalIncome - totalExpenseAmount;
+            totalBalanceField.innerText = balance;
+        }
+
     }
 
 }
@@ -68,14 +79,13 @@ saveBtn.addEventListener('click', function () {
         return;
     }
     else {
-
         const savingAmount = totalIncome * (percentageOfSavingAmount / 100);
-
-        if (isNaN(percentageOfSavingAmount) ) {
+        
+        if (isNaN(percentageOfSavingAmount)) {
             savingAmountField.innerText = 0;
             remainingBalance.innerText = totalBalanace - parseInt(savingAmountField.innerText);
         }
-        else if(percentageOfSavingAmount < 0){
+        else if (percentageOfSavingAmount < 0) {
             return alert("Saving amount can not be a negative number");
         }
         else if (savingAmount > totalBalanace) {
@@ -86,7 +96,7 @@ saveBtn.addEventListener('click', function () {
 
             remainingBalance.innerText = totalBalanace - savingAmount;
         }
-        
+
     }
 
 });
