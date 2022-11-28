@@ -62,15 +62,31 @@ saveBtn.addEventListener('click', function () {
     const savingAmountField = getElement('saving-amount');
     const remainingBalance = getElement('remaining-balance');
     const totalBalanceField = getElement('total-balance');
+    const totalBalanace = parseInt(totalBalanceField.innerText);
 
     if (isNaN(totalIncome)) {
         return;
     }
-    else if (percentageOfSavingAmount > 0) {
-        const savingAmount = totalIncome * 0.2;
-        savingAmountField.innerText = savingAmount;
+    else {
 
-        remainingBalance.innerText = parseInt(totalBalanceField.innerText) - savingAmount;
+        const savingAmount = totalIncome * (percentageOfSavingAmount / 100);
+
+        if (isNaN(percentageOfSavingAmount) ) {
+            savingAmountField.innerText = 0;
+            remainingBalance.innerText = totalBalanace - parseInt(savingAmountField.innerText);
+        }
+        else if(percentageOfSavingAmount < 0){
+            return alert("Saving amount can not be a negative number");
+        }
+        else if (savingAmount > totalBalanace) {
+            return alert("You don't have enough balance to save");
+        }
+        else {
+            savingAmountField.innerText = savingAmount;
+
+            remainingBalance.innerText = totalBalanace - savingAmount;
+        }
+        
     }
 
 });
