@@ -32,11 +32,11 @@ function calculate() {
 
     if (isNaN(totalIncome) || totalIncome == '' || totalIncome < 0) {
         incomeInput.value = '';
-        return alert("You are required to enter a positive amount");
+        return alert("You are required to enter a positive income amount");
     }
     else if (isNaN(foodExpense) || isNaN(rentExpense) || isNaN(clothesExpense)) {
         totalBalanceField.innerText = totalIncome;
-        return alert("You are required to enter a valid number");
+        return alert("You are required to enter a valid expense amount");
     }
 
     else if (foodExpense < 0 || rentExpense < 0 || clothesExpense < 0) {
